@@ -21,6 +21,13 @@ return {
         enabled = true,
         view = "notify",
       },
+      lsp = {
+        -- Let Neovim create hover floats so their focus behavior is controlled
+        -- by the buffer-local mapping below.
+        hover = {
+          enabled = false,
+        },
+      },
       presets = {
         command_palette = true,
       },

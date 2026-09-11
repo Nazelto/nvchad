@@ -1,6 +1,12 @@
 vim.g.base46_cache = vim.fn.stdpath "data" .. "/base46/"
 vim.g.mapleader = " "
 
+-- Keep Neovim's bytecode cache in a writable location.
+if vim.loader then
+  vim.loader.path = "/tmp/nvim-luac"
+  vim.fn.mkdir(vim.loader.path, "p")
+end
+
 -- bootstrap lazy and all plugins
 local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
 
